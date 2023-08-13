@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TrelloBittah</title>
+        <meta name="application-name" content="Trello">
+        <meta name="msapplication-TileColor" content="#2b5797">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="stylesheet" type="text/css" href="./src/css/main.css">
+        <link rel="stylesheet" type="text/css" href="./src/css/footerStyle.css">
+        <link rel="stylesheet" type="text/css" href="./src/css/headerStyle.css">
+        <link rel="stylesheet" type="text/css" href="./src/css/sidenavStyle.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Trello</title>
+        <script defer src="/__/firebase/9.9.4/firebase-app-compat.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/9.9.4/firebase-auth-compat.js"></script>
+        <script defer src="/__/firebase/9.9.4/firebase-database-compat.js"></script>
+        <script defer src="/__/firebase/9.9.4/firebase-firestore-compat.js"></script>
+        <script defer src="/__/firebase/9.9.4/firebase-functions-compat.js"></script>
+        <script defer src="/__/firebase/9.9.4/firebase-messaging-compat.js"></script>
+        <script defer src="/__/firebase/9.9.4/firebase-storage-compat.js"></script>
+        <script defer src="/__/firebase/9.9.4/firebase-analytics-compat.js"></script>
+        <script defer src="/__/firebase/9.9.4/firebase-remote-config-compat.js"></script>
+        <script defer src="/__/firebase/9.9.4/firebase-performance-compat.js"></script>
+        <!--
+          initialize the SDK after all desired features are loaded, set useEmulator to false
+          to avoid connecting the SDK to running emulators.
+        -->
+        <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    </head>
+    <body>
+        <header id="header">
+          <div class="header-flex">
+              <span id="sidebar-button" style="font-size:25px;cursor:pointer">&#9776;</span>
+              <h1 id="title" class="text-align-center">TrelloBittah</h1>
+          </div>
+        </header>
+
+
+        <div id="sidebar" class="sidenav">
+            <span id="sidebar-close">&times;</span>
+            <div class="side-string">
+              <p class="is-title">Boards</p>
+            </div>
+            <div class="side-string" id="icons">
+              <span style="font-size:25px;cursor:pointer;letter-spacing: 1ch;">
+                  <i title="Delete this board." id="delete-button" class="fa fa-trash"></i>
+                  <i title="Save all boards." id="save-button" class="fa fa-floppy-o"></i>
+              </span>
+            </div>
+            <ul id="boards-list">
+                <!-- Boards will be listed here... -->
+            </ul>
+
+            <div class="flex-col">
+                <input type="text" id="add-board-text" name="add-board" placeholder="Add Board...">
+                <button id="add-board-button">Add Board</button>
+            </div>
+        </div>
+
+        <div id="card-context-menu" class="context-menu">
+            <ul>
+                <li id="card-context-menu-delete">Delete</li>
+                <li id="card-context-menu-clear">Clear</li>
+            </ul>
+        </div>
+
+        <div class="container" id="main-container">
+            <div id="cards-container">
+                <div id="add-card">
+                    <input maxlength="128" type="text" id="add-card-text" name="add-card" placeholder="Add Card..." autofocus>
+                    <button id="add-card-button" class="plus-button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <footer id='footer' class='footer-container'>
+          <div class="footer-flex">
+            <span style="font-size:25px;cursor:pointer;letter-spacing: 1ch;">
+                <a class="footer-button" title="github" href="https://github.com/BittahLover"><img src="./src/img/github.png" class="git" alt="" width="45" height="45"></a>
+                <a class="footer-button" title="instagram" href="https://www.instagram.com/mirarius/"><img src="./src/img/inst.png" alt="" class="inst" width="45" height="45"></a>
+                <a class="footer-button" title="LinkedIn" href="https://www.linkedin.com/in/maxim-vecherinsky/"><img src="./src/img/link.png" class="link" alt="" width="45" height="45"></a>
+            </span>
+          </div>
+        </footer>
+        <script type="module" src="./src/js/main.js"></script>
+    </body>
+</html>
